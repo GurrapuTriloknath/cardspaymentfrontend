@@ -1,0 +1,187 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <section class="vh-20 gradient-custom">
+      <div class="container py-5 h-20">
+        <div class="row d-flex justify-content-center align-items-center h-20">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white" style="border-radius: 1rem">
+              <div class="card-body p-5 text-center">
+                <div class="mb-md-5 mt-md-4 pb-5">
+                  <h2 class="fw-bold mb-2">Coustomer Details </h2>
+                  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-outline form-white mb-4">
+                      <label class="form-label" for="typeNameX"
+                        >Name</label
+                      >
+                      <input
+                        type="text"
+                        formControlName="name"
+                        class="form-control"
+                        [ngClass]="{
+                          'is-invalid': form.controls['name'].errors
+                        }"
+                      />
+                      <div
+                        *ngIf="form.controls['name'].errors"
+                        class="invalid-feedback"
+                      >
+                        <div
+                          *ngIf="form.controls['name'].errors['required']"
+                        >
+                        Name is required
+                        </div>
+                        <div
+                          *ngIf="form.controls['name'].errors['minlength']"
+                        >
+                        Name must be at least 6 characters
+                        </div>
+                        <div
+                          *ngIf="form.controls['name'].errors['maxlength']"
+                        >
+                        Name must not exceed 20 characters
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                        <label class="form-label" for="typeAgeX"
+                          >Age</label
+                        >
+                        <input
+                          type="age"
+                          formControlName="age"
+                          class="form-control"
+                          [ngClass]="{
+                            'is-invalid': form.controls['age'].errors
+                          }"
+                        />
+                        <div
+                          *ngIf="form.controls['age'].errors"
+                          class="invalid-feedback"
+                        >
+                          <div *ngIf="form.controls['age'].errors['required']">
+                            Age is required
+                          </div>
+                          <div *ngIf="form.controls['age'].errors['email']">
+                            Enter the Age
+                          </div>
+                        </div>
+                      </div>
+  
+                    
+                    <div class="form-outline form-white mb-4">
+                      <label class="form-label" for="typeEmailX"
+                        >Email Id</label
+                      >
+                      <input
+                        type="email"
+                        formControlName="email"
+                        class="form-control"
+                        [ngClass]="{
+                          'is-invalid': form.controls['email'].errors
+                        }"
+                      />
+                      <div
+                        *ngIf="form.controls['email'].errors"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="form.controls['email'].errors['required']">
+                          Email is required
+                        </div>
+                        <div *ngIf="form.controls['email'].errors['email']">
+                          Enter the valid email
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                      <label class="form-label" for="typeAddressX"
+                        >Address</label
+                      >
+                      <input
+                      type="address"
+                      formControlName="address"
+                      class="form-control"
+                      [ngClass]="{
+                        'is-invalid': form.controls['address'].errors
+                      }"
+                    />
+                    <div
+                      *ngIf="form.controls['address'].errors"
+                      class="invalid-feedback"
+                    >
+                      <div
+                        *ngIf="form.controls['address'].errors['required']"
+                      >
+                      Address is required
+                      </div>
+                      <div
+                        *ngIf="form.controls['address'].errors['minlength']"
+                      >
+                      Present Address required
+                      </div>
+                      <div
+                        *ngIf="form.controls['address'].errors['maxlength']"
+                      >
+                      Address must not exceed 30 characters
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="typePhonenumberX"
+                      >Phonenumber</label
+                    >
+                    <input
+                    type="phonenumber"
+                    formControlName="phonenumber"
+                    class="form-control"
+                    [ngClass]="{
+                      'is-invalid': form.controls['phonenumber'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="form.controls['phonenumber'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div
+                      *ngIf="form.controls['phonenumber'].errors['required']"
+                    >
+                    Phonenumber is required
+                    </div>
+                    
+                    <div
+                      *ngIf="form.controls['phonenumber'].errors['maxlength']"
+                    >
+                    Phonenumber must not exceed 10 numbers
+                    </div>
+                  </div>
+                </div>
+
+                    <button
+                      class="btn btn-outline-light btn-lg px-5"
+                      type="submit"
+                    >
+                      Apply
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+
+
